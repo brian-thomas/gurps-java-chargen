@@ -1,0 +1,140 @@
+<?xml version="1.0"?>
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.bt</groupId>
+  <artifactId>gcg</artifactId>
+  <name>GURPS Character Generator</name>
+  <version>0.01</version>
+  <description></description>
+
+  <build>
+
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>1.6</source>
+          <target>1.6</target>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <artifactId>maven-resources-plugin</artifactId>
+        <configuration>
+          <outputDirectory>${basedir}/target/classes</outputDirectory>
+          <resources>
+            <resource>
+              <directory>${basedir}/src/main/resources</directory>
+            </resource>
+          </resources>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <configuration>
+           <descriptor>src/main/assembly/dist.xml</descriptor>
+        </configuration>
+      </plugin>
+      
+       <plugin>
+        <artifactId>maven-resources-plugin</artifactId>
+        <configuration>
+          <outputDirectory>${basedir}/target/classes</outputDirectory>
+          <resources>
+            <resource>
+              <directory>${basedir}/src/main/resources</directory>
+            </resource>
+          </resources>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <configuration>
+          <overview>${basedir}/doc/overview.html</overview>
+          <minmemory>128m</minmemory>
+          <maxmemory>512</maxmemory>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-project-info-reports-plugin</artifactId>
+      </plugin>
+
+    </plugins>
+
+  </build>
+
+  <repositories>
+
+    <repository>
+      <id>java.net</id>
+      <url>https://maven-repository.dev.java.net/nonav/repository</url>
+      <layout>legacy</layout>
+    </repository>
+
+    <!--repository>
+      <id>ibiblio-repository</id>
+      <name>IBIBLIO Maven Repository</name>
+      <url>http://www.ibiblio.org/maven2</url>
+    </repository-->
+
+  </repositories>
+
+  <dependencies>
+
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.0</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>log4j</groupId>
+      <artifactId>log4j</artifactId>
+      <version>1.2.13</version>
+    </dependency>
+    
+    <dependency>
+      <groupId>args4j</groupId>
+      <artifactId>args4j</artifactId>
+      <version>2.0.7</version>
+    </dependency>
+    
+  </dependencies>
+
+  <!--distributionManagement>
+    <repository>
+      <id>umd-deploy-repository</id>
+      <url>scp://archive.astro.umd.edu/var/www/html/maven</url>
+    </repository>
+  </distributionManagement-->
+
+  <reporting>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-project-info-reports-plugin</artifactId>
+        <reportSets>
+          <reportSet>
+            <reports>
+              <report>dependencies</report>
+              <!-- report>project-team</report -->
+              <!-- report>mailing-list</report -->
+              <!-- report>cim</report -->
+              <!-- report>issue-tracking</report -->
+              <report>license</report>
+              <!-- report>scm</report -->
+              <report>index</report>
+              <report>summary</report>
+            </reports>
+          </reportSet>
+        </reportSets>
+      </plugin>
+    </plugins>
+  </reporting>
+
+</project>
